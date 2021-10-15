@@ -1,0 +1,22 @@
+#include "str_easy.h"
+
+double itc_percent_lower_uppercase(string a)
+{
+    long long kpr=0;
+    long long kstr=0;
+    double otv;
+    long long l;
+    l=itc_len(a);
+    for(long long  i=0;i<l;i++)
+    {
+        if(is_char_upper(a[i]))
+        {
+            kstr++;
+        }else
+        {
+            kpr++;
+        }
+    }
+    otv=double(kpr)/double(kstr)*100;
+    return otv;
+}
