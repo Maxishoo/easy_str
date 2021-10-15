@@ -14,14 +14,17 @@ string itc_cmp_str(string str1,string str2, int num)
     }
     return neww;
 }
-long long itc_find_str(string str1,string str2)
+int itc_find_str(string str1,string str2)
 {
     long long lstr1=str1.size();//itc_len(str1);
     long long lstr2=str2.size();//itc_len(str2);
     long long k=0;
     for(long long i=0;i<lstr1;i++)
     {
-        if(str1[i]==str2[k])
+        if(k==lstr2)
+        {
+            return lstr1-k;
+        }else if(str1[i]==str2[k])
         {
             k=k+1;
         }
@@ -29,10 +32,8 @@ long long itc_find_str(string str1,string str2)
         {
             k=0;
         }
-        if(k==lstr2)
-        {
-            return lstr1-k;
-        }
     }
     return -1;
 }
+
+string itc_three_str(string str1, string str2, string str3)
