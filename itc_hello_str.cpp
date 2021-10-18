@@ -3,6 +3,6 @@
 string itc_hello_str(string a)
 {
     string b;
-    b="Helo, ";
+    b="Hello, ";
     return(b+=a);
 }
