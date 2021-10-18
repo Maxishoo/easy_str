@@ -8,18 +8,18 @@ void itc_first_end_three(string a)
     {
         for(long long i=0;i<3;i++)
         {
-            cout<<a[i]<<" ";
+            cout<<a[i];
         }
-        for(long long i=0;i<3+1;i++)
+        for(long long i=k-3;i<k;i++)
         {
-            cout<<a[k-i]<<" ";
+            cout<<a[i];
         }
 
     }else
     {
         for(long long i=0;i<k;i++)
         {
-            cout<<a[0]<<" ";
+            cout<<a[0];
         }
     }
 }
