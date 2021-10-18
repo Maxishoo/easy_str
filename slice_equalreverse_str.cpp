@@ -6,7 +6,7 @@ string itc_slice_str(string str,int start, int endd)
     long long l;
     l=itc_len(str);
     string n="";
-    if(start>end)
+    if(start>endd)
     {
         return str;
     }
