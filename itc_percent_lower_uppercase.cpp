@@ -17,6 +17,10 @@ double itc_percent_lower_uppercase(string a)
             kpr++;
         }
     }
+    if(kpr==0 || kstr==0)
+    {
+        return -1;
+    }
     otv=double(kpr)/double(kstr)*100;
     return otv;
 }

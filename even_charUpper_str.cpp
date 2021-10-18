@@ -5,6 +5,8 @@ string itc_even_place(string str)
     string n;
     long long l;
     l=itc_len(str);
+    if (l == 0 || l == 1)
+        return "-1";
     for(long long i=0;i<l;i++)
     {
         if(i%2==0)

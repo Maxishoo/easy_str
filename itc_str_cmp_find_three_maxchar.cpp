@@ -3,15 +3,21 @@
 string itc_cmp_str(string str1,string str2, int num)
 {
     string neww;
+    long long lstr2=itc_len(str2);
+    if(lstr2==0)
+    {
+        return(str1);
+    }
     for(long long  i=0;i<num;i++)
     {
         neww+=str1[i];
     }
-    long long lstr2=itc_len(str2);
-    for(long long  i=num;i<lstr2;i++)
-    {
-        neww+=str2[i];
-    }
+    //for(long long  i=num;i<lstr2;i++)
+    //{
+        //neww+=str2[i];
+    //}
+    neww+=str2;
+    neww+=itc_slice_str(str1,num+lstr2,itc_len(str1));
     return neww;
 }
 int itc_find_str(string str1,string str2)
