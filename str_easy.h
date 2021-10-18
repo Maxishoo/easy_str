@@ -26,7 +26,12 @@ string itc_reverse_str(string str);
 string itc_slice_str(string str,int start, int endd);
 
 bool itc_equal_reverse(string str);
+
 string itc_cmp_str(string str1,string str2, int num);
 int itc_find_str(string str1,string str2);
+string itc_three_str(string str1, string str2, string str3);
+int itc_max_char_on_end(string str);
 
+int itc_str_to_int(char a);
+int itc_max(int a,int b);
 #endif // STR_EASY_H_INCLUDED
