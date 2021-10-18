@@ -2,7 +2,7 @@
 
 string itc_cmp_str(string str1,string str2, int num)
 {
-    string neww;
+    string neww="";
     long long lstr2=itc_len(str2);
     if(lstr2==0)
     {
@@ -48,7 +48,7 @@ string itc_three_str(string str1, string str2, string str3)
 {
     long long pos;
     pos=itc_find_str(str1,str2);
-    string otv;
+    string otv="";
     while(pos != -1)
     {
         otv+=itc_slice_str(str1,0,pos);
