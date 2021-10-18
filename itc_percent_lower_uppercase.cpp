@@ -21,6 +21,6 @@ double itc_percent_lower_uppercase(string a)
     {
         return -1;
     }
-    otv=double(kpr)/double(kstr)*100;
+    otv=double(kpr)/double(kstr);
     return otv;
 }

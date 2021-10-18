@@ -1,20 +1,15 @@
 #include "str_easy.h"
 
-string itc_even_place(string str)
-{
-    string n;
-    long long l;
-    l=itc_len(str);
-    if (l == 0 || l == 1)
+
+string itc_even_place(string str) { // 6
+    string txt = "";
+    if (itc_len(str) == 0 || itc_len(str) == 1)
         return "-1";
-    for(long long i=0;i<l;i++)
-    {
-        if(i%2==0)
-        {
-            n+=str[i];
-        }
+    for (int n1 = 0; n1 < itc_len(str); n1++) {
+        if ((n1 + 1) % 2 == 0)
+            txt += str[n1];
     }
-    return n;
+    return txt;
 }
 bool is_char_upper(char a)
 {
