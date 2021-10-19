@@ -4,20 +4,25 @@ string itc_cmp_str(string str1,string str2, int num)
 {
     string neww="";
     long long lstr2=itc_len(str2);
+    long long lstr1=itc_len(str1);
     if(lstr2==0)
     {
         return(str1);
     }
-    for(long long  i=0;i<num;i++)
+    for(long long  i=0;i<lstr1;i++)
     {
-        neww+=str1[i];
+        if (i<num || i > (num+lstr2-1)) {
+            neww+=str1[i];
+        }else {
+            neww+=str2[i-num];
+        }
     }
     //for(long long  i=num;i<lstr2;i++)
     //{
         //neww+=str2[i];
     //}
-    neww+=str2;
-    neww+=itc_slice_str(str1,num+lstr2,itc_len(str1));
+    //neww+=str2;
+    //neww+=itc_slice_str(str1,num+lstr2,itc_len(str1));
     return neww;
 }
 int itc_find_str(string str1,string str2)
@@ -48,12 +53,13 @@ string itc_three_str(string str1, string str2, string str3)
 {
     long long pos;
     pos=itc_find_str(str1,str2);
+    long long l2 = itc_len(str2);
     string otv="";
     while(pos != -1)
     {
-        otv+=itc_slice_str(str1,0,pos);
+        otv+=itc_slice_str(str1,0,pos-1);
         otv+=str3;
-        str1=itc_slice_str(str1,pos+itc_len(str2),itc_len(str1));
+        str1=itc_slice_str(str1,pos+l2,itc_len(str1));
         pos=itc_find_str(str1,str2);
     }
     otv+=str1;
@@ -66,7 +72,8 @@ int itc_max_char_on_end(string str)
     int k=0;
     int otv=0;
     int sledchifra=0;
-    for(long long i=0;i<itc_len(str);i++)
+    long long l = itc_len(str);
+    for(long long i=0;i<l;i++)
     {
         m=itc_str_to_int(str[i]);
 
@@ -85,13 +92,14 @@ int itc_max_char_on_end(string str)
         }else
         {
             otv=itc_max(otv,k);
-            k=0;
+            k=1;
+            sledchifra=m+1;
         }
 
     }
     if(k!=0)
     {
-        otv=k;
+        otv=itc_max(otv,k);
     }
     if(otv==0)
     {
