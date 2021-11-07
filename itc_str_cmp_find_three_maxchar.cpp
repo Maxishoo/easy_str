@@ -77,7 +77,9 @@ string itc_three_str(string str1, string str2, string str3)
     string otv="";
     while(pos != -1)
     {
-        otv+=itc_slice_str(str1,0,pos-1);
+        if (pos !=0 ) {
+            otv+=itc_slice_str(str1,0,pos-1);
+        }
         otv+=str3;
         str1=itc_slice_str(str1,pos+l2,itc_len(str1));
         pos=itc_find_str(str1,str2);
@@ -86,44 +88,40 @@ string itc_three_str(string str1, string str2, string str3)
     return otv;
 }
 
+string itc_three_str_(string str1, string str2, string str3) {
+    int cmp;
+    while (itc_find_str(str1, str2) != -1) {
+        cmp = itc_find_str(str1, str2);
+
+        string strs;
+        string stre;
+
+        for (int i = 0; i < cmp; i++) strs += str1[i];
+        for (int i = cmp + itc_len(str2); str1[i] != '\0' ; i++) stre += str1[i];
+
+        str1 = strs + str3 + stre;
+    }
+    return str1;
+}
+
 int itc_max_char_on_end(string str)
 {
     int m;
     int k=0;
     int otv=0;
-    int sledchifra=0;
     long long l = itc_len(str);
     for(long long i=0;i<l;i++)
     {
         m=itc_str_to_int(str[i]);
 
-        if(m == (-1) )
-        {
-            otv=itc_max(otv,k);
+        if (m==(-1)) {
             k=0;
-        }else if(k==0)
-        {
-            k=1;
-            sledchifra=m+1;
-        }else if(sledchifra==m)
-        {
+        } else {
             k=k+1;
-            sledchifra=m+1;
-        }else
-        {
-            otv=itc_max(otv,k);
-            k=1;
-            sledchifra=m+1;
+            if (k>otv) {
+                otv = k;
+            }
         }
-
-    }
-    if(k!=0)
-    {
-        otv=itc_max(otv,k);
-    }
-    if(otv==0)
-    {
-        return -1;
     }
     return otv;
 }
