@@ -5,6 +5,7 @@ string itc_cmp_str(string str1,string str2, int num)
     string neww="";
     long long lstr2=itc_len(str2);
     long long lstr1=itc_len(str1);
+    if (lstr1 < num || num < 0) return str1;
     if(str2=="")
     {
         return(str1);

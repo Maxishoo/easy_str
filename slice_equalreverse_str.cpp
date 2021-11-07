@@ -12,7 +12,7 @@ string itc_slice_str(string str,int start, int endd)
     }
     if(endd>l-1)
     {
-        endd=l;
+        endd=l-1;
     }
     for(int i=start;i<endd+1;i++)
     {
