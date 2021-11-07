@@ -14,10 +14,6 @@ string itc_slice_str(string str,int start, int endd)
     {
         endd=l;
     }
-    if(start>l-1)
-    {
-        return str;
-    }
     for(int i=start;i<endd+1;i++)
     {
         n+=str[i];
